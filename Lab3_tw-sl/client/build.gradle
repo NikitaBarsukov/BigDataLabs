@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'client'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.springframework', name: 'spring-core', version: '5.2.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '5.2.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.2.2.RELEASE'
+    compile 'org.apache.httpcomponents:httpclient:4.5.10'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
